@@ -7,7 +7,6 @@ import br.com.via.poc.plataformas.ui.transaction.dto.GetTransactionsResponse;
 import br.com.via.poc.plataformas.ui.transaction.dto.TransactionDto;
 import br.com.via.poc.plataformas.ui.transaction.dto.create.CreateTransactionResponse;
 import br.com.via.poc.plataformas.ui.transaction.dto.update.UpdateTransactionStatusDto;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

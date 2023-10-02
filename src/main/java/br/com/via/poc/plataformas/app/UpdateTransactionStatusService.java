@@ -1,7 +1,5 @@
 package br.com.via.poc.plataformas.app;
 
-import br.com.via.poc.plataformas.app.converter.TransactionToEventConverter;
-import br.com.via.poc.plataformas.app.dto.OperationDto;
 import br.com.via.poc.plataformas.domain.Transaction;
 import br.com.via.poc.plataformas.domain.TransactionStatus;
 import br.com.via.poc.plataformas.domain.Transactions;
