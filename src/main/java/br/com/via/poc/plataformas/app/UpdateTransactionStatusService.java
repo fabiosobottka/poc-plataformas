@@ -17,7 +17,7 @@ public class UpdateTransactionStatusService {
         this.transactions = transactions;
     }
 
-    public void execute(String id, final UpdateTransactionStatusDto request) {
+    public void execute(final String id, final UpdateTransactionStatusDto request) {
         Transaction transaction = transactions.findById(id).orElseThrow(RuntimeException::new);
         transaction.updateStatus(TransactionStatus.valueOf(request.status().name()));
         transaction.updateAtWithCurrentDateTime();

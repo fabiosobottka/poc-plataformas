@@ -17,7 +17,7 @@ public class GetTransactionsByUserIdService {
         this.converter = converter;
     }
 
-    public GetTransactionsResponse execute(Long userRegistrationNumber) {
+    public GetTransactionsResponse execute(final Long userRegistrationNumber) {
         return converter.convert(transactions.findByUserRegistrationNumber(userRegistrationNumber));
     }
 

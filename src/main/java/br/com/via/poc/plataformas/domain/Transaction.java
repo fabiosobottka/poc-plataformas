@@ -39,7 +39,7 @@ public class Transaction {
         this.status = TransactionStatus.PROCESSING;
     }
 
-    public void updateStatus(TransactionStatus status) {
+    public void updateStatus(final TransactionStatus status) {
         if(this.status.equals(status)) {
             throw new IllegalArgumentException("Transaction is with the same status: " + status.name());
         }

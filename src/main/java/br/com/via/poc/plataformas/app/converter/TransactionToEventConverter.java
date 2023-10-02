@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TransactionToEventConverter {
-    public TransactionEvent convert(OperationDto operation, Transaction transaction) {
+    public TransactionEvent convert(final OperationDto operation, final Transaction transaction) {
 
         final TransactionDto transactionEvent = new TransactionDto(transaction.getId(), new UserDto(transaction.getUserRegistrationNumber(), transaction.getUserName()),
                 transaction.getValue(), transaction.getDescription(), transaction.getDate());

@@ -17,7 +17,7 @@ public class KafkaTransactionSender implements TransactionEventSender {
     }
 
     @Override
-    public void sendEvent(TransactionEvent data) {
+    public void sendEvent(final TransactionEvent data) {
         this.kafkaTemplate.send(topic, data);
     }
 

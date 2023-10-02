@@ -17,22 +17,22 @@ class DataSourceTransactionRepository implements Transactions {
     }
 
     @Override
-    public Transaction insert(Transaction transaction) {
+    public Transaction insert(final Transaction transaction) {
         return repository.insert(transaction);
     }
 
     @Override
-    public Transaction update(Transaction transaction) {
+    public Transaction update(final Transaction transaction) {
         return repository.save(transaction);
     }
 
     @Override
-    public Optional<Transaction> findById(String id) {
+    public Optional<Transaction> findById(final String id) {
         return repository.findById(id);
     }
 
     @Override
-    public List<Transaction> findByUserRegistrationNumber(Long registrationNumber) {
+    public List<Transaction> findByUserRegistrationNumber(final Long registrationNumber) {
         return repository.findByUser_RegistrationNumber(registrationNumber);
     }
 }

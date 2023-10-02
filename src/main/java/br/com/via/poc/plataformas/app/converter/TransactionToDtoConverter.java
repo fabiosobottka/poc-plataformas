@@ -30,14 +30,13 @@ public class TransactionToDtoConverter {
     }
 
 
-    public TransactionDto convert(Transaction data) {
+    public TransactionDto convert(final Transaction data) {
 
-        String id = data.getId();
-        UserDto user = new UserDto(data.getUserRegistrationNumber(), data.getUserName());
-        BigDecimal value = data.getValue();
-        String description = data.getDescription();
-        LocalDateTime date = data.getDate();
-
+        final String id = data.getId();
+        final UserDto user = new UserDto(data.getUserRegistrationNumber(), data.getUserName());
+        final BigDecimal value = data.getValue();
+        final String description = data.getDescription();
+        final LocalDateTime date = data.getDate();
 
         return new TransactionDto(id, user, value, description, date);
     }
