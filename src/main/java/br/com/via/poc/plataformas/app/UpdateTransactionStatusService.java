@@ -20,7 +20,7 @@ public class UpdateTransactionStatusService {
     public void execute(String id, final UpdateTransactionStatusDto request) {
         Transaction transaction = transactions.findById(id).orElseThrow(RuntimeException::new);
         transaction.updateStatus(TransactionStatus.valueOf(request.status().name()));
-        transaction.updateAt(LocalDateTime.now());
+        transaction.updateAtWithCurrentDateTime();
         transactions.update(transaction);
     }
 

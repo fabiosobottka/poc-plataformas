@@ -47,8 +47,8 @@ public class Transaction {
         this.status = status;
     }
 
-    public void updateAt(LocalDateTime updateTime) {
-        this.updatedAt = updateTime;
+    public void updateAtWithCurrentDateTime() {
+        this.updatedAt = LocalDateTime.now();
     }
 
     public String getUserName() {
