@@ -15,19 +15,15 @@ public class UpdateTransactionStatusService {
 
     private final Transactions transactions;
 
-    private final TransactionToEventConverter converter;
-
-    public UpdateTransactionStatusService(Transactions transactions, TransactionToEventConverter converter) {
+    public UpdateTransactionStatusService(Transactions transactions) {
         this.transactions = transactions;
-        this.converter = converter;
     }
 
     public void execute(String id, final UpdateTransactionStatusDto request) {
         Transaction transaction = transactions.findById(id).orElseThrow(RuntimeException::new);
         transaction.updateStatus(TransactionStatus.valueOf(request.status().name()));
         transaction.updateAt(LocalDateTime.now());
-
-        converter.convert(OperationDto.UPDATE, transactions.update(transaction));
+        transactions.update(transaction);
     }
 
 }
