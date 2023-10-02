@@ -18,7 +18,7 @@ public class CreateTransactionService {
 
     private final TransactionToEventConverter converter;
 
-    public CreateTransactionService(Transactions transactions, KafkaTransactionSender sender, TransactionToEventConverter converter) {
+    public CreateTransactionService(Transactions transactions, TransactionEventSender sender, TransactionToEventConverter converter) {
         this.transactions = transactions;
         this.sender = sender;
         this.converter = converter;
