@@ -6,6 +6,7 @@ import br.com.via.poc.plataformas.domain.Transaction;
 import br.com.via.poc.plataformas.domain.Transactions;
 import br.com.via.poc.plataformas.infra.KafkaTransactionSender;
 import br.com.via.poc.plataformas.ui.transaction.dto.TransactionDto;
+import br.com.via.poc.plataformas.ui.transaction.dto.create.CreateTransactionResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,9 +24,9 @@ public class CreateTransactionService {
         this.converter = converter;
     }
 
-    public String execute(final TransactionDto data) {
+    public CreateTransactionResponse execute(final TransactionDto data) {
         final Transaction transaction = data.buildTransaction();
         sender.sendEvent(converter.convert(OperationDto.CREATE, transactions.insert(transaction)));
-        return transaction.getId();
+        return new CreateTransactionResponse(transaction.getId());
     }
 }

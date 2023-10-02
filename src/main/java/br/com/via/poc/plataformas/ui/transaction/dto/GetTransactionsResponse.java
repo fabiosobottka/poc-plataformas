@@ -4,5 +4,4 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public record GetTransactionsResponse(@JsonProperty("transactions") List<TransactionDto> transactions) {
-}
+public record GetTransactionsResponse(@JsonProperty("transactions") List<TransactionDto> transactions) { }

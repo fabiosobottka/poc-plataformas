@@ -39,8 +39,7 @@ class TransactionController {
     @ResponseStatus(CREATED)
     @PostMapping("/transaction")
     CreateTransactionResponse register(@RequestBody TransactionDto transaction) {
-        String transactionId = createService.execute(transaction);
-        return new CreateTransactionResponse(transactionId);
+        return createService.execute(transaction);
     }
 
     @ResponseStatus(OK)
