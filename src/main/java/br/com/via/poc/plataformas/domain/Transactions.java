@@ -1,5 +1,6 @@
 package br.com.via.poc.plataformas.domain;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface Transactions {
@@ -10,6 +11,6 @@ public interface Transactions {
 
     Optional<Transaction> findById(String id);
 
-    Optional<Transaction> findByUserRegistrationNumber(Long registrationNumber);
+    List<Transaction> findByUserRegistrationNumber(Long registrationNumber);
 
 }

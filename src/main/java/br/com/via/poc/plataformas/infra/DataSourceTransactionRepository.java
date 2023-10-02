@@ -4,6 +4,7 @@ import br.com.via.poc.plataformas.domain.Transaction;
 import br.com.via.poc.plataformas.domain.Transactions;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -31,7 +32,7 @@ class DataSourceTransactionRepository implements Transactions {
     }
 
     @Override
-    public Optional<Transaction> findByUserRegistrationNumber(Long registrationNumber) {
-        return repository.findByUserRegistrationNumber(registrationNumber);
+    public List<Transaction> findByUserRegistrationNumber(Long registrationNumber) {
+        return repository.findByUser_RegistrationNumber(registrationNumber);
     }
 }
